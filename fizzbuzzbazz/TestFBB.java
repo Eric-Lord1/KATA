@@ -1,11 +1,17 @@
 /* Test del fizzbuzzbazz */
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestFBB {
-
-    @Test
+    
+    @Nested
+    @DisplayName("Acceptance criteria for numbers non mutiples of three, five and seven")
+    class NonMultiplesOfThreeFiveSeven {
+    
+        @Test
     public void case1() {
         // Let's check the case one
         int given = 1;
@@ -49,7 +55,10 @@ public class TestFBB {
         int found = FBB.evaluateFBB(given);
         assertEquals(expected,found);
     }
+ 
+    }
 
+    
    
 
 }
